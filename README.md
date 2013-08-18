@@ -2,8 +2,11 @@ restate
 =======
 
 [restate](https://github.com/imrefazekas/restate) is a simple framework aiding the creation of REST-based nodejs applications.
+
 Just a quick generator for projects using technologies: [connect](http://www.senchalabs.org/connect/), [jade](http://jade-lang.com), [less](http://lesscss.org) and [connect-rest](https://github.com/imrefazekas/connect-rest).
+
 Generates everything you need: build files, ready-to-serve server code, project folder structure, basic deployment stage-levels
+
 
 # Installation
 
@@ -18,7 +21,7 @@ Step into a folder where you want to create your new project folder and execute 
 
 This will create the project structure and scripts for it allowing you to build into 2 different stages: development and production. 
 
-[restate](https://github.com/imrefazekas/restate) finishes in an instant and you are ready to go!
+[restate](https://github.com/imrefazekas/restate) finishes in an instant and you are ready to go! (have a running local mongo!)
 
 	$ ./buildDevelopment.sh
 
@@ -27,6 +30,21 @@ And open browser:
 	http://localhost:8080/
 
 Done. :)
+
+
+# Configuration
+
+	--preserveFiles 
+	Will try not to override any existing files.
+
+
+	--noAA
+	Removes the built-in A&A tempalte code from the server-side.
+
+
+
+	--noREST
+	Removes the built-in RESTful tempalte code from the server-side.
 
 
 # Project structure
