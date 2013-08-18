@@ -1,0 +1,40 @@
+{
+  "name": "projectName",
+  "version": "0.0.1",
+  "description": "ToBeFilled",
+  "keywords": [ ],
+  "private": true,
+  "author": {
+    "name": "ToBeFilled",
+    "email": "ToBeFilled"
+  },
+  "main": "./server/server.js",
+  "dependencies": {
+    "jsonconfig": ">=0.3.0",
+    "underscore": "~1",
+    "connect": "~2",
+    "connect-redirection": "0.0.1",
+    "connect-rest": ">=0.6.2",
+    "authom": "~0.4",
+    "mongoose": "~3",
+    "mongoose-function": "~0.1",
+    "mongoose-schemagen": "~0.1",
+    "puid": "~0.4.4"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-jade": "~0.7.0",
+    "grunt-contrib-less": "~0.7.0"
+  },
+  "scripts": {
+    "grunt": "node_modules/.bin/grunt",
+    "start": "node server/server.js"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "_id": "projectName@0.0.1"
+}

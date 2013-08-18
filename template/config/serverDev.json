@@ -1,0 +1,12 @@
+{
+	"server":{
+		"port": 8080,
+		"name": "projectName",
+		"sessionHashSecret": "ToBeFilled"
+	},
+	"mongodb":{
+		"host": "localhost",
+		"port": 27017,
+		"name": "ToBeFilled"
+	}
+}

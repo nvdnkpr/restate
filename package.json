@@ -1,0 +1,48 @@
+{
+  "name": "restate",
+  "version": "0.1.0",
+  "description": "Framework for creating REST-based NodeJS applications with ease.",
+  "keywords": [
+    "connect",
+    "rest",
+    "restful",
+    "framework",
+    "project",
+    "app",
+    "application"
+  ],
+  "homepage": "https://github.com/imrefazekas/restate",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/imrefazekas/restate.git"
+  },
+  "bugs": {
+    "url": "http://github.com/imrefazekas/restate/issues"
+  },
+  "author": {
+    "name": "Imre Fazekas",
+    "email": "imre.fazekas@gmail.com"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "bin": "./lib/restate.js",
+  "main": "./lib/restate.js",
+  "dependencies": {
+    "async": ">=0.2.0",
+    "underscore": "~1.5.1",
+    "underscore.string": "~2.3.3",
+    "wrench": "~1.5.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "_id": "restate@0.1.0"
+}

@@ -1,0 +1,1 @@
+/usr/local/share/npm/lib/node_modules/grunt-cli/bin/grunt deploy:$1
