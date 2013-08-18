@@ -37,11 +37,8 @@ Done. :)
 	--preserveFiles 
 	Will try not to override any existing files.
 
-
 	--noAA
 	Removes the built-in A&A tempalte code from the server-side.
-
-
 
 	--noREST
 	Removes the built-in RESTful tempalte code from the server-side.
