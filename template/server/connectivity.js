@@ -1,3 +1,6 @@
+exports.buildUpSchemas = function(db, mongoose){
+
+};
 exports.connectMongo = function(mongoose, options, callback) {
 	var host = process.env.MONGODB_DEVELOPMENT_HOST || options.host || 'localhost';
 	var port = process.env.MONGODB_DEVELOPMENT_PORT || options.port || 27017;
@@ -19,6 +22,10 @@ exports.connectMongo = function(mongoose, options, callback) {
 	} );
 	db.on('open', function() {
 		console.log('Connected to MongoDB');
+
+		exports.buildUpSchemas(db, mongoose);
+
+		console.log('Schema and model created.');
 
 		if(callback)
 			callback( null, db );
