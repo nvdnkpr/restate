@@ -1,5 +1,6 @@
 var connect = require('connect'),
 	redirect = require('connect-redirection'),
+	FileStore = require('connect-session-file'),
 	http = require('http');
 
 -rest-
@@ -30,11 +31,26 @@ config.load( [
 
 connectivity.connectMongo( mongoose, config.mongodb, function( db ){
 	var app = connect()
-		.use( redirect() )
 		.use( connect.static('./dist/www') )
 		.use( connect.query() )
 		.use( connect.cookieParser() )
-		.use( connect.session( { key: config.server.name + '.sid',  secret: config.server.sessionHashSecret, cookie: { httpOnly: false } } ) )
+		.use( connect.session( { 
+			key: config.server.name + '.sid',
+			secret: config.server.sessionHashSecret, 
+			cookie: { httpOnly: false },
+			store: new FileStore({
+				db: './sessions.db'
+			})
+		} ) )
+		.use( redirect() )
+		.use( function(req, res, next){
+			if( !req.session || !req.session.provider ){
+				if(req.session)
+					req.session.destroy();
+				res.redirect( '/index.html?err=1' );
+			}
+			else next();
+		} )
 	;
 
 	global.db = db;

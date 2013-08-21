@@ -1,5 +1,7 @@
 function buildUpAA( config, authom, rest ){
 	authom.on("auth", function(req, res, data) {
+		req.session.provider = 'ToBeFilled';
+
 		res.redirect( '/index.html?res=1' );
 	});
 
