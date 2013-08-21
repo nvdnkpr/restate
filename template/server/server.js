@@ -29,14 +29,19 @@ config.load( [
 	(process.env['DEVELOPMENT_MODE'] ? './config/serverDev.json' : './config/server.json')
 ] );
 
-connectivity.connectMongo( mongoose, config.mongodb, function( db ){
+connectivity.connectMongo( mongoose, config.mongodb, function( err, db ){
+	if( err ){
+		console.error( err );
+		process.exit(1);
+	}
+
 	var app = connect()
 		.use( connect.static('./dist/www') )
 		.use( connect.query() )
 		.use( connect.cookieParser() )
-		.use( connect.session( { 
+		.use( connect.session( {
 			key: config.server.name + '.sid',
-			secret: config.server.sessionHashSecret, 
+			secret: config.server.sessionHashSecret,
 			cookie: { httpOnly: false },
 			store: new FileStore({
 				db: './sessions.db'

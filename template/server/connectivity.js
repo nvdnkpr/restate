@@ -14,12 +14,14 @@ exports.connectMongo = function(mongoose, options, callback) {
 
 	var db = mongoose.connection;
 
-	db.on('error', console.error.bind(console, 'connection error:'));
+	db.on('error', function (err) {
+		callback( err, null );
+	} );
 	db.on('open', function() {
 		console.log('Connected to MongoDB');
 
 		if(callback)
-			callback( db );
+			callback( null, db );
 	});
 
 	exports.db = db;
