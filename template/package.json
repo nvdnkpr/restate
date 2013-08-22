@@ -15,7 +15,7 @@
     "connect": "~2",
     "connect-redirection": "0.0.1",
     "connect-session-file": "~1",
-    "connect-rest": ">=0.6.2",
+    "connect-rest": ">=0.6.4",
     "authom": "~0.4",
     "mongoose": "~3",
     "mongoose-function": "~0.1",
