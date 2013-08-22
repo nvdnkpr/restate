@@ -48,14 +48,6 @@ connectivity.connectMongo( mongoose, config.mongodb, function( err, db ){
 			})
 		} ) )
 		.use( redirect() )
-		.use( function(req, res, next){
-			if( !req.session || !req.session.provider ){
-				if(req.session)
-					req.session.destroy();
-				res.redirect( '/index.html?err=1' );
-			}
-			else next();
-		} )
 	;
 
 	global.db = db;
@@ -66,6 +58,17 @@ connectivity.connectMongo( mongoose, config.mongodb, function( err, db ){
 	authenticator.buildUpAA( config, authom, rest );
 	app.use( rest.dispatcher( 'GET', '/auth/:service', authom.app ) );
 -eoaa-
+
+	console.log('API security added...');
+	app.use( function(req, res, next){
+		if( !req.session || !req.session.provider ){
+			console.log( req.session, req.session.provider );
+			if(req.session)
+				req.session.destroy();
+			res.redirect( '/viesa.html?err=1' );
+		}
+		else next();
+	} );
 
 -rest-
 	var options = {
