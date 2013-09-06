@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -71,10 +72,16 @@ module.exports = function(grunt) {
 					"www/css/styles.css": "less/styles.less"
 				}
 			}
+		},
+		nodeunit: {
+			tests: [ 'test/services.js' ]
 		}
 	});
 
+	grunt.registerTask('test', ['nodeunit']);
+
 	grunt.registerTask('deploy', 'A sample task that logs stuff.', function(stage) {
+		grunt.option('force', true);
 		grunt.task.run( ['clean', (stage && stage==='production' ?'jade:production' : 'jade:development'), (stage && stage==='production' ?'less:production' : 'less:development'), 'uglify', 'copy'] );
 	});
 	grunt.registerTask('default', 'Default', function(platform) {
