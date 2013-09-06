@@ -3,6 +3,13 @@ var connect = require('connect'),
 	FileStore = require('connect-session-file'),
 	http = require('http');
 
+var async = global.async = require('async');
+
+var _ = global._ = require('underscore');
+/*_.str = require('underscore.string');
+_.mixin(_.str.exports());
+_.str.include('Underscore.string', 'string');*/
+
 -rest-
 var rest = require('connect-rest');
 var restMaker = require('./restMaker');
@@ -15,12 +22,14 @@ var authom = require("authom");
 var authenticator = require("./authenticator");
 -eoaa-
 
+-mongo-
 var mongoose = require('mongoose');
 require('mongoose-function')(mongoose);
 var schemagen = require('mongoose-schemagen');
 
 var Puid = require('puid');
 var puid = new Puid();
+-eomongo-
 
 var config = {};
 config = require('jsonconfig');
@@ -29,12 +38,8 @@ config.load( [
 	(process.env['DEVELOPMENT_MODE'] ? './config/serverDev.json' : './config/server.json')
 ] );
 
-connectivity.connectMongo( mongoose, config.mongodb, function( err, db ){
-	if( err ){
-		console.error( err );
-		process.exit(1);
-	}
 
+function buildUpConnect(){
 	var app = connect()
 		.use( connect.static('./dist/www') )
 		.use( connect.query() )
@@ -49,8 +54,6 @@ connectivity.connectMongo( mongoose, config.mongodb, function( err, db ){
 		} ) )
 		.use( redirect() )
 	;
-
-	global.db = db;
 
 
 -aa-
@@ -85,4 +88,17 @@ connectivity.connectMongo( mongoose, config.mongodb, function( err, db ){
 	http.createServer(app).listen( port, function() {
 		console.log('Running on http://localhost:' + port);
 	});
+}
+
+-mongo-
+connectivity.connectMongo( mongoose, config.mongodb, function( err, db ){
+	if( err ){
+		console.error( err );
+		process.exit(1);
+	}
+
+	global.db = db;
+
+	-eomongo-buildUpConnect();-mongo-
 } );
+-eomongo-

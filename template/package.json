@@ -20,7 +20,8 @@
     "mongoose": "~3",
     "mongoose-function": "~0.1",
     "mongoose-schemagen": "~0.1",
-    "puid": "~0.4.4"
+    "puid": "~0.4.4",
+    "async": "~0.2.9"    
   },
   "devDependencies": {
     "grunt": "~0.4.1",
