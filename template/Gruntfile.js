@@ -11,6 +11,14 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files: [
+					{expand: true, flatten: true, src: ['node_modules/async/lib/async.js'], dest: 'dist/www/js/lib/'},
+-ko-				
+					{expand: true, flatten: true, src: ['node_modules/funcsync/funcsync.min.js'], dest: 'dist/www/js/lib/'},
+					{expand: true, flatten: true, src: ['node_modules/vindication.js/vindication.min.js'], dest: 'dist/www/js/lib/'},
+					{expand: true, flatten: true, src: ['node_modules/knockout/build/output/knockout-latest.js'], dest: 'dist/www/js/lib/'},
+					{expand: true, flatten: true, src: ['node_modules/knockout-parsley/knockout.parsley.min.js'], dest: 'dist/www/js/lib/'},
+					{expand: true, flatten: true, src: ['node_modules/knockout.mapper.js/knockout.mapper.min.js'], dest: 'dist/www/js/lib/'},
+-eoko-
 					{expand: true, src: ['www/**'], dest: 'dist/', filter: 'isFile'}
 				]
 			}
