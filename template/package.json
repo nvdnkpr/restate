@@ -15,13 +15,26 @@
     "connect": "~2",
     "connect-redirection": "0.0.1",
     "connect-session-file": "~1",
+-rest-
     "connect-rest": ">=0.6.4",
+-eorest-
+-aa-
     "authom": "~0.4",
+-eoaa-
+-mongo-
     "mongoose": "~3",
     "mongoose-function": "~0.1",
     "mongoose-schemagen": "~0.1",
-    "puid": "~0.4.4",
-    "async": "~0.2.9"    
+    "puid": "~0.4",
+-eomongo-
+-ko-
+    "funcsync": "~1",
+    "vindication.js": ">=1.2",
+    "knockout": "~2",
+    "knockout.mapper.js": "~1",
+    "knockout-parsley": "~0.2",
+-eoko-
+    "async": "~0.2",
   },
   "devDependencies": {
     "grunt": "~0.4.1",
