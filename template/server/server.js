@@ -65,10 +65,9 @@ function buildUpConnect(){
 	console.log('API security added...');
 	app.use( function(req, res, next){
 		if( !req.session || !req.session.provider ){
-			console.log( req.session, req.session.provider );
 			if(req.session)
 				req.session.destroy();
-			res.redirect( '/viesa.html?err=1' );
+			res.redirect( '/index.html?err=1' );
 		}
 		else next();
 	} );

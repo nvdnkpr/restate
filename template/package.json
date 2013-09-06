@@ -34,7 +34,7 @@
     "knockout.mapper.js": "~1",
     "knockout-parsley": "~0.2",
 -eoko-
-    "async": "~0.2",
+    "async": "~0.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
