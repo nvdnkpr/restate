@@ -1,6 +1,6 @@
 {
   "name": "restate",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Framework for creating REST-based NodeJS applications with ease.",
   "keywords": [
     "connect",
@@ -44,5 +44,5 @@
   "engines": {
     "node": ">= 0.8.0"
   },
-  "_id": "restate@0.2.1"
+  "_id": "restate@0.2.2"
 }

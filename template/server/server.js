@@ -60,7 +60,6 @@ function buildUpConnect(){
 	console.log('Auth services added...');
 	authenticator.buildUpAA( config, authom, rest );
 	app.use( rest.dispatcher( 'GET', '/auth/:service', authom.app ) );
--eoaa-
 
 	console.log('API security added...');
 	app.use( function(req, res, next){
@@ -71,6 +70,7 @@ function buildUpConnect(){
 		}
 		else next();
 	} );
+-eoaa-
 
 -rest-
 	var options = {
