@@ -17,7 +17,7 @@ Generates everything you need: build files, ready-to-serve server code, project 
 
 Step into a folder where you want to create your new project folder and execute the following from command line:
 
-	$ restate projectName [--preserveFiles] [--noAA] [--noREST] [--noMongo]
+	$ restate projectName [--preserveFiles] [--noAA] [--noREST] [--noMongo] [--noKO]
 
 This will create the project structure and scripts for it allowing you to build into 2 different stages: development and production. 
 
@@ -46,6 +46,9 @@ Done. :)
 	--noMongo
 	Removes the built-in MongoDB tempalte code from the services-side
 
+	--noKO
+	Removes the built-in Knockout.js tempalte code from the client-side
+
 
 # Project structure
 
@@ -55,10 +58,13 @@ Done. :)
 	config/ --- json config files configuring server and db connectivity
 	Gruntfile.js --- grunt file and plugins
 	gruntRun.sh --- runs grunt with a parameter specifying the stage level
-	less/ --- folder for less files
 	package.json --- usual
 	server/ --- js files of the server. RESTful services, connect server, A&A services, Mongo connectivity
-	views/ --- folder for the jade files
+	web/ --- dynamic web files
+		less/ --- folder for less files
+		js/  --- folder for the js files
+			lib/  --- folder for the external js files
+		views/  --- folder for the jade files
 	www/ --- static files' folder
 
 Every build will be put into the created __'dist'__ folder.
