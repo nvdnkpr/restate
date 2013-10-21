@@ -35,7 +35,7 @@ var config = {};
 config = require('jsonconfig');
 
 config.load( [
-	(process.env['DEVELOPMENT_MODE'] ? './config/serverDev.json' : './config/server.json')
+	(process.env.DEVELOPMENT_MODE ? './config/serverDev.json' : './config/server.json')
 ] );
 
 

@@ -17,7 +17,7 @@ Generates everything you need: build files, ready-to-serve server code, project 
 
 Step into a folder where you want to create your new project folder and execute the following from command line:
 
-	$ restate projectName [--preserveFiles] [--noAA] [--noREST]
+	$ restate projectName [--preserveFiles] [--noAA] [--noREST] [--noMongo]
 
 This will create the project structure and scripts for it allowing you to build into 2 different stages: development and production. 
 
@@ -42,6 +42,9 @@ Done. :)
 
 	--noREST
 	Removes the built-in RESTful tempalte code from the server-side.
+
+	--noMongo
+	Removes the built-in MongoDB tempalte code from the services-side
 
 
 # Project structure
