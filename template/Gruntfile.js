@@ -45,7 +45,7 @@ module.exports = function(grunt) {
 					beautify: true
 				},
 				files: {
-					'www/js/viesa.all.min.js': [
+					'www/js/all.min.js': [
 						'web/js/lib/underscore.js','web/js/lib/vindication.min.js', 'web/js/lib/funcsync.js', 'web/js/lib/async.js',
 						'web/js/lib/jquery-2.0.3.min.js',
 						'web/js/lib/knockout-latest.js', 'web/js/lib/knockout.mapper.min.js', 'web/js/lib/knockout.parsley.min.js',
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 					beautify: false
 				},
 				files: {
-					'www/js/viesa.all.min.js': [
+					'www/js/all.min.js': [
 						'web/js/lib/underscore.js','web/js/lib/vindication.min.js', 'web/js/lib/funcsync.js', 'web/js/lib/async.js',
 						'web/js/lib/jquery-2.0.3.min.js',
 						'web/js/lib/knockout-latest.js', 'web/js/lib/knockout.mapper.min.js', 'web/js/lib/knockout.parsley.min.js',
@@ -110,7 +110,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			combine: {
 				files: {
-					'www/css/viesa.all.min.css': [
+					'www/css/all.min.css': [
 						'web/css/*.css'
 					]
 				}
